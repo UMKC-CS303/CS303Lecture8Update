@@ -286,6 +286,16 @@ public class MyLinkedList<E> implements MyList<E> {
   //     else returns false
   public boolean contains(Object e) {
     System.out.println("You must add the logic for method: contains");
+    // check if list is empty
+    if (size == 0)
+      return false;
+    Node<E> current = head; 
+    while (current != null) {
+      if (current.element.equals(e)) { 
+        return true; // Element found, return true
+      }
+      current = current.next; //iterate to next node
+    }
     return false;
   }
 
