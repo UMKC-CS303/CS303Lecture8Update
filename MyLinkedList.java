@@ -295,9 +295,20 @@ public class MyLinkedList<E> implements MyList<E> {
   //     return the element 
   public E get(int index) {
     System.out.println("You must add the logic for method: get");
-    return null;
-  }
+    if (index < 0 || index >= size) {
+      return null;
+    }
+    else {
+      Node<E> current = head;
 
+      for (int i = 1; i <= index; i++) {
+        current = current.next;
+      }
+
+      return current.element;
+    }
+  }
+  
   @Override 
   //Return the index of the first matching object or -1 if not found
   //PRE: accepts an object
